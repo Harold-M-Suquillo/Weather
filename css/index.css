@@ -1,0 +1,40 @@
+@font-face {
+    font-family: ImportedFont;
+    src: url("../fonts/CursedTimerUlil-Aznm.ttf");
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+
+}
+
+#main-container{
+    background-image: url("../img/Background_img.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -15rem;
+
+}
+
+/* Style the input form */
+input:focus {
+    outline-width: 0;
+}
+
+#time{
+    
+    color: rgb(0, 255, 119);
+    -webkit-text-stroke: 1px black;
+    font-family: ImportedFont;
+    font-size: calc(100% + 3vw + 3vh);
+
+
+}
+#time-container{
+    margin-top: 15rem;
+    margin-bottom: 2rem;
+    padding-top: 6rem;
+    
+}
