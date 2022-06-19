@@ -10,10 +10,13 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	</head>
 	<body>
+
         <div class="container-fluid " id="main-container" style="height: 100vh;">
             
             <header>
                 <!╌ Clock╌>
+
+
 
 
 
@@ -34,7 +37,7 @@
                           <input  class="rounded border border-dark" id="autocomplete" placeholder="Enter a location" type="text" style="font-size:1.4rem; width: 100%; height: 2.8rem;  padding: 1rem"/>
                         </div>
                         <div class="col-lg-1">
-                          <button type="submit" class="btn btn-primary mb-3 px-0" style="width: 100%; height: 2.8rem;">Submit</button>
+                          <button id="submit" type="submit" class="btn btn-primary mb-3 px-0" style="width: 100%; height: 2.8rem;">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -42,6 +45,7 @@
             </header>
     
             <main>
+                <h1 id="stuff"></h1>
 
         
     
@@ -51,11 +55,11 @@
 
         </div>
 
-
-        <script async
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxXew42SCYirnGsc9nkIEqmswuVHWCt2Y&libraries=places&callback=initAutocomplete">
+        <script src="index.js" type="module"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5BZPYaTagJhB8e5MM58BIEV0dWLoNSBQ&libraries=places">
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <script src="../js/index.js"></script>
+        
 	</body>
 </html>
