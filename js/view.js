@@ -1,7 +1,6 @@
 export class View{
     constructor(){
         setInterval(this.clock, 1000);
-
     }
     clock(){
         let time = document.getElementById("time");
@@ -11,4 +10,13 @@ export class View{
         let seconds = (date.getSeconds() < 10) ? ("0" + date.getSeconds()) : date.getSeconds();
         time.textContent = `${hours}:${minutes}:${seconds}`;
     }
+
+
+
+
+
+
+
+
+
 }

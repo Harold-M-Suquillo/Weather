@@ -6,23 +6,17 @@ class Controller{
         this.search = new SearchModel();
         this.weather = new WeatherModel();
         this.view = new View();
-
-
+        this.data = null;
         document.getElementById("submit-btn").addEventListener('click', this.handleSearchInput.bind(this));
     }
-
-
+    
     handleSearchInput(e){
         e.preventDefault();
-        this.getWeather();       
+        this.weather.fetchdata(SearchModel.place).then(this.handleUI);
     }
-    
-    getWeather(){
-        console.log("Entered function")
-        this.weather.fetchdata()
-       // this.weather.fetchdata();
+    handleUI(data){
+        console.log(data);
     }
-
 
 
 }
