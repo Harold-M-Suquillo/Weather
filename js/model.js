@@ -24,7 +24,6 @@ export class SearchModel{
             SearchModel.place = null;
         }
         else{
-            console.log(place);
             SearchModel.place = {
                 formatted_address: place.formatted_address,
                 latitude: place.geometry.location.lat(),
@@ -32,23 +31,24 @@ export class SearchModel{
                 }           
         }
     }
-
 }
 
 // Weather API Model
 export class WeatherModel{
-    constructor(){
+    constructor(WEATHER_API_KEY){
+        this._WEATHER_API_KEY = WEATHER_API_KEY;
     }
     async fetchdata(target){
         try{
-            const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=5acdfa352226498c98955739221706&q=${target.latitude},${target.longitude}&days=3`);
+            console.log(this);
+            const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${this._WEATHER_API_KEY}&q=${target.latitude},${target.longitude}&days=3`);
             if (response.ok){
                 const jsonResponse = await response.json();
                 return jsonResponse;
             }
         }
         catch(error){
-            console.log("Failed to GET data");
+            console.log("Failed to GET weather data");
         }
     }
 }

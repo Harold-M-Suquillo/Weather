@@ -37,23 +37,22 @@ export class View{
 
     _AquireIcon(data){
         let icon = data.day.condition.icon.split("/");
-        icon = icon[icon.length - 1]
+        icon = icon[icon.length - 1];
         return "./img/day/"+icon;
     }
 
     _AcquireDayInfo(data){
-        // Forecast/ Max temp/ Min temp
         return {
             maxTemp: data.day.maxtemp_f + " °F",
             minTemp: data.day.mintemp_f + " °F",
             forecast: data.day.condition.text
         };
-
     }
 
     // Create sinle card element
     _CreateElement(id, data){
 
+        // Create outer containers
         let NewElement = Object.assign(document.createElement('div'),{classList:"col-lg-3 col-sm-6 py-3"});
         let temp = Object.assign(document.createElement('div'),{classList:"bg-container"});
         NewElement.append(temp);
@@ -68,39 +67,12 @@ export class View{
         temp2.append(temp3);        
         temp3.append(Object.assign(document.createElement('img'),{src:this._AquireIcon(data)}));    // Assign the icon
 
-    
         // Add the forecast data 
         let forecast = this._AcquireDayInfo(data);
         temp3.append(Object.assign(document.createElement('p'),{classList:"card-text mt-3 m-0", textContent:`Forecast: ${forecast.forecast}`}));
         temp3.append(Object.assign(document.createElement('p'),{classList:"card-text m-1", textContent:`Max Temp: ${forecast.maxTemp}`}));
         temp3.append(Object.assign(document.createElement('p'),{classList:"card-text m-1", textContent:`Min Temp: ${forecast.minTemp}`}));
 
-
-
         return NewElement;
-
-
-
-
-        // temp2 is <div class="card text-center">
-        // Date 
-
-
-        // Image
-
-
-
-        // Forecast/min and max temp
-
-
-
     }
-
-
-
-
-
-
-
-
 }

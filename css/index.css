@@ -3,14 +3,11 @@
     src: url("../fonts/CursedTimerUlil-Aznm.ttf");
 }
 
-
 * {
     margin: 0;
     padding:0;
     box-sizing: border-box;
 }
-
-
 
 body{
     width: 100%;
@@ -18,23 +15,10 @@ body{
     background-image: url("../img/Background_img.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-
-}
-
-
-
-#footer{
-    color: white;
-
-    background-color: black;
-    position: absolute;
-    bottom: 0px;
-
 }
 
 
 @media screen and (max-width: 50rem)  {
-
     body{
         background-image: none;
         background-color: #34568B !important;
@@ -50,12 +34,10 @@ input:focus {
     color: rgb(0, 255, 119);
     -webkit-text-stroke: 1px black;
     font-family: ImportedFont;
-    font-size: calc(100% + 3vw + 3vh);
-
+    font-size: calc(100% + 4.5vw);
     margin-top: 4.5rem;
 
 }
-
 
 .card {
     background-color: transparent !important;  
@@ -66,7 +48,6 @@ input:focus {
     background-color: black;
     opacity: .73;
     border-radius: 0.375rem;
-
 }
 
 
