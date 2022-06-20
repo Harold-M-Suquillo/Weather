@@ -3,19 +3,42 @@
     src: url("../fonts/CursedTimerUlil-Aznm.ttf");
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;   
 
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
 }
 
-#main-container{
+
+
+body{
+    width: 100%;
+    min-height: 100vh;
     background-image: url("../img/Background_img.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: -15rem;
 
+}
+
+
+
+#footer{
+    color: white;
+
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+
+}
+
+
+@media screen and (max-width: 50rem)  {
+
+    body{
+        background-image: none;
+        background-color: #34568B !important;
+    }
 }
 
 /* Style the input form */
@@ -24,18 +47,33 @@ input:focus {
 }
 
 #time{
-    
     color: rgb(0, 255, 119);
     -webkit-text-stroke: 1px black;
     font-family: ImportedFont;
     font-size: calc(100% + 3vw + 3vh);
 
+    margin-top: 4.5rem;
 
 }
-#time-container{
-    margin-top: 15rem;
-    margin-bottom: 2rem;
-    padding-top: 6rem;
-    
+
+
+.card {
+    background-color: transparent !important;  
+    color: white;
 }
+
+.bg-container{
+    background-color: black;
+    opacity: .73;
+    border-radius: 0.375rem;
+
+}
+
+
+
+
+
+
+
+
 
