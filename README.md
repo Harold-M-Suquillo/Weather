@@ -29,7 +29,7 @@ To obtain API keys you need to sign up with the links provided
  ```  
 Once in the weather app directory you are going to have to modify index.html and index.js
 
-##### in index.html
+#### in index.html
 you are going to have to look for this script element located at line (38 - 40)
  ```html
 <script
@@ -38,14 +38,14 @@ you are going to have to look for this script element located at line (38 - 40)
   ```
 Replace <PLACES-API-KEY> with the key provided to you from Google.
   
-  ##### in index.js
+  #### in index.js
   You are going to have to look for the line of code (line 6).
   ```javascript
   const WEATHER_API_KEY = 'WEATHER API KEY';
   ```
   Replace 'WEATHER API KEY' with your key from WeatherAPI
-==Once these two steps are completed you can open index.html in the browser==
+Once these two steps are completed you can open index.html in the browser
   
 ### How to use
-First you can start to input a location in the searchbar. Autcomplete will begin to display relevant options. Once you see the location in teh options provided, click on that option and then press submit.
-**NOTE: if you do not slect an option from the dropdown and just input a location it will NOT work.**
+First you can start to input a location in the searchbar. Autcomplete will begin to display relevant options. Once you see the location in the options provided, click on that option and then press submit.
+**NOTE: if you do not select an option from the dropdown, and just input and submit a location it will NOT work.**
