@@ -1,9 +1,9 @@
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 export class View{
     constructor(){
-        setInterval(this.clock, 1000);
+        setInterval(this._clock, 1000);
     }
-    clock(){
+    _clock(){
         let time = document.getElementById("time");
         let date = new Date();
         let hours = (date.getHours() < 10) ? ("0" + date.getHours()) : date.getHours();
@@ -27,7 +27,7 @@ export class View{
         }
     }
 
-    // Acquire the date
+    // Get the date
     _AcquireDate(i){
         var day = new Date();
         var nextDay = new Date(day);
@@ -35,12 +35,14 @@ export class View{
         return days[nextDay.getDay()] + " " + nextDay.getDate();
     }
 
+    // Get weather icon
     _AquireIcon(data){
         let icon = data.day.condition.icon.split("/");
         icon = icon[icon.length - 1];
         return "./img/day/"+icon;
     }
 
+    // Get weather info
     _AcquireDayInfo(data){
         return {
             maxTemp: data.day.maxtemp_f + " °F",
@@ -59,13 +61,17 @@ export class View{
         let temp2 = Object.assign(document.createElement('div'),{classList:"text-center card"});
         temp.append(temp2);
 
-        let date = this._AcquireDate(id);   // Get the date
+        // Get the date
+        let date = this._AcquireDate(id);
         temp2.append(Object.assign(document.createElement('div'),{classList:"card-header h3 m-0", textContent:date}));
 
-        let temp3 = document.createElement("div");  // Data Container
+        // Data Container
+        let temp3 = document.createElement("div");
         temp3.classList.add("card-body");
-        temp2.append(temp3);        
-        temp3.append(Object.assign(document.createElement('img'),{src:this._AquireIcon(data)}));    // Assign the icon
+        temp2.append(temp3);  
+
+        // Assign weather icon
+        temp3.append(Object.assign(document.createElement('img'),{src:this._AquireIcon(data)}));
 
         // Add the forecast data 
         let forecast = this._AcquireDayInfo(data);

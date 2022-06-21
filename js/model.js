@@ -1,34 +1,32 @@
 // Google Places API Model
 export class SearchModel{
-    static autocomplete = 0;
-    static place = null;
     constructor(){
-                                    // Load the API library with API key provided
-        this.initAutocomplete();    // Init the search component
-
+        this.autocomplete = null;
+        this._initAutocomplete();    
     }
-    initAutocomplete() {
-        SearchModel.autocomplete = new google.maps.places.Autocomplete(
+
+    // Init the search component
+    _initAutocomplete() {
+        this.autocomplete = new google.maps.places.Autocomplete(
             document.getElementById('autocomplete'), 
             {
-                fields: ['place_id', 'geometry', 'formatted_address','name',]
+                fields: ['place_id', 'geometry']
             });
-            SearchModel.autocomplete.addListener('place_changed', this.onPlaceChanged);
     }
+
     // Handles Input option change 
     onPlaceChanged(){
-        let place = SearchModel.autocomplete.getPlace();
-        if (!place.geometry){
+        let place = this.autocomplete.getPlace();
+        if (((typeof place) == 'undefined') || (!place.geometry)){
             // User did not select a prediction; reset the input field
             document.getElementById('autocomplete').placeholder = 'Enter a place';
-            SearchModel.place = null;
+            return null;
         }
         else{
-            SearchModel.place = {
-                formatted_address: place.formatted_address,
+            return {
                 latitude: place.geometry.location.lat(),
                 longitude: place.geometry.location.lng()
-                }           
+                };
         }
     }
 }
@@ -40,7 +38,7 @@ export class WeatherModel{
     }
     async fetchdata(target){
         try{
-            console.log(this);
+            //console.log(this);
             const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${this._WEATHER_API_KEY}&q=${target.latitude},${target.longitude}&days=3`);
             if (response.ok){
                 const jsonResponse = await response.json();

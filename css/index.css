@@ -17,7 +17,6 @@ body{
     background-repeat: no-repeat;
 }
 
-
 @media screen and (max-width: 50rem)  {
     body{
         background-image: none;
@@ -49,12 +48,3 @@ input:focus {
     opacity: .73;
     border-radius: 0.375rem;
 }
-
-
-
-
-
-
-
-
-
